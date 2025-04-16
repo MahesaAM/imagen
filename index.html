@@ -9,9 +9,18 @@
 <body>
     <div class="container">
         <h1>Image Generation API</h1>
-    <form id="imageForm">
-        <label for="prompt">Enter your prompts (separate with new lines):</label>
-        <textarea id="prompt" name="prompt" rows="5" required></textarea>
+        <form id="imageForm">
+            <label for="prompt">Enter your prompts (separate with new lines):</label>
+            <textarea id="prompt" name="prompt" rows="5" required></textarea>
+
+            <label for="aspectRatio">Select Aspect Ratio:</label>
+            <select id="aspectRatio" name="aspectRatio">
+                <option value="IMAGE_ASPECT_RATIO_LANDSCAPE_FOUR_THREE">Landscape 4:3</option>
+                <option value="IMAGE_ASPECT_RATIO_LANDSCAPE">Landscape</option>
+                <option value="IMAGE_ASPECT_RATIO_PORTRAIT_THREE_FOUR">Portrait 3:4</option>
+                <option value="IMAGE_ASPECT_RATIO_PORTRAIT">Portrait</option>
+                <option value="IMAGE_ASPECT_RATIO_SQUARE">Square</option>
+            </select>
 
             <button type="submit">Generate Image</button>
         </form>

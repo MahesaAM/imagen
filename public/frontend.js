@@ -2,6 +2,7 @@ document.getElementById('imageForm').addEventListener('submit', async function(e
     event.preventDefault();
 
     const promptText = document.getElementById('prompt').value.trim();
+    const aspectRatio = document.getElementById('aspectRatio').value; // Get selected aspect ratio
     if (!promptText) {
         alert('Please enter at least one prompt.');
         return;
@@ -13,12 +14,12 @@ document.getElementById('imageForm').addEventListener('submit', async function(e
     resultDiv.innerHTML = 'Generating images... Please wait.';
 
     try {
-        const response = await fetch('/generate', {
+        const response = await fetch('/generatePrompt', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ prompts })
+            body: JSON.stringify({ prompts, aspectRatio }) // Include aspect ratio in the request
         });
 
         if (!response.ok) {
