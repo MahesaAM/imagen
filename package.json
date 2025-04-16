@@ -1,10 +1,10 @@
 {
   "name": "image-generator",
   "version": "1.0.0",
-  "main": "get.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node get.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
